@@ -1,0 +1,145 @@
+/*-----------------------------------------------------------------
+- Track Item
+-----------------------------------------------------------------*/
+
+.track-item{
+  margin: 10px 20px 80px 20px;
+  position: relative;
+  z-index: 1;
+
+  &__thumb {
+    width: 100%;
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 60%;
+      position: relative;
+    }
+
+    img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+  }
+
+  &:before {
+    content: '';
+    background: $color-gray-darkest;
+    border-radius: var(--border-radius);
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+    left: 1.2rem;
+    top: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 15px rgba($color-gray-light, 0.2);
+    z-index: -1;
+
+  }
+
+  // Header
+  // --------------------------
+  &__header {
+    margin-top: 10px;
+    position: relative;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+  }
+
+  &__title {
+    flex-grow: 1;
+    margin-left: 10px;
+    .title {
+      font-size: 1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: 800;
+      margin: 0 0 5px;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-weight: 400;
+      margin: 0;
+      color: $color-gray-lighter;
+    }
+  }
+
+  &__menu{
+    color: $color-gray-lighter;
+    cursor: pointer;
+  }
+
+  // Footer
+  // --------------------------
+  &__footer {
+    margin-top: 15px;
+    position: absolute;
+    bottom: -2rem;
+
+    .track-item__badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 10px;
+      background-color: rgba(#000, 0.9);
+      color: $color-white;
+      border-radius: 5px;
+      font-size: 0.75rem;
+      margin-right: 10px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+      cursor: pointer;
+
+      @for $i from 1 through 3 {
+        &:nth-last-child(#{$i}) {
+          transition-delay: 25 * $i + ms;
+        }
+      }
+
+      i {
+        margin-right: 5px;
+      }
+    }
+  }
+
+
+  @mixin hover-effect {
+    &:before {
+      left: -1rem;
+      right: -1rem;
+      top: -1rem;
+      bottom: -3rem;
+    }
+
+    .track-item__footer {
+      .track-item__badge{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      @include hover-effect;
+    }
+  }
+
+  @media (hover: none) {
+    &.expand {
+      @include hover-effect;
+    }
+  }
+}

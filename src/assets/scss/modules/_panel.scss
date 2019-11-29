@@ -1,0 +1,15 @@
+/*-----------------------------------------------------------------
+- Panel
+-----------------------------------------------------------------*/
+
+.panel {
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 3px 15px rgba($color-gray-light, 0.2);
+
+  @each $name, $value in $colors {
+    &.#{$name}{
+      box-shadow: 0 3px 15px rgba($color-gray-light, 0.1), 0 3px 15px rgba($value, 0.1);
+    }
+  }
+}

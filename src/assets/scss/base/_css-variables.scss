@@ -1,0 +1,18 @@
+/*-----------------------------------------------------------------
+- CSS Variables
+-----------------------------------------------------------------*/
+
+:root {
+  // colors
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+
+  // Breakpoints
+  @each $name, $value in $bp-sizes {
+    --breakpoint-#{$name}: #{$value}px;
+  }
+
+  --font-family: #{$font-family};
+  --border-radius: #{$border-radius};
+}

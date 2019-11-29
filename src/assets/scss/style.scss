@@ -2,11 +2,19 @@
 - Music App Test Styles - V1
 -----------------------------------------------------------------*/
 
+// Variables
+@import "variables/colors";
+@import "variables/project-vars";
+
 // Basic
 @import "base/normalize";
 @import "base/reset";
+@import "base/css-variables";
 
-// Elements
+// Modules
+@import "modules/panel";
+@import "modules/track-item";
+@import "modules/player-button";
 
 
 // Layouts

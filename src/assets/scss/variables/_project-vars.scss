@@ -12,3 +12,12 @@ $font-size:          		16px !default;
 $font-weight:        		400 !default;
 $line-height:        		1.5 !default;
 $font-base-color:           $color-gray-dark;
+$border-radius:             10px;
+
+// Breakpoints
+$bp-sizes: (
+        xl: 1200,
+        lg: 960,
+        md: 768,
+        sm: 576,
+);
