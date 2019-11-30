@@ -29,3 +29,18 @@
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }
+
+
+@mixin bounce-animation($color, $opacity: 0.7) {
+  0% {
+    box-shadow: 0 0 0 0 rgba($color, $opacity);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba($color, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba($color, 0);
+  }
+}

@@ -12,7 +12,21 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  background-color: $color-yellow;
+  background-color: $color-primary;
   outline: none;
   cursor: pointer;
+  color: #000000;
+
+  &:disabled {
+    background-color: mix($color-primary, $color-gray-lightest);
+    color: mix(#000000, #fff, 90)
+  }
+}
+
+.bounce {
+  animation: bounce 1s infinite ease-in-out;
+}
+
+@keyframes bounce {
+  @include bounce-animation($color-primary)
 }

@@ -1,0 +1,93 @@
+/*-----------------------------------------------------------------
+- Main Page Layout
+-----------------------------------------------------------------*/
+body {
+  background-color: $bg-primary;
+  background-image: url("~@/assets/images/pattern.png");
+}
+
+.container{
+  max-width: 960px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.loading{
+  position: relative;
+  background: red;
+
+  &:before {
+    content: '';
+    display: inline-block;
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: var(--color-yellow);
+    z-index: 1000;
+  }
+
+  &:after {
+    content: '';
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $color-gray-darkest;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    animation: gray-bounce 1s infinite ease-in-out,
+                transparency 1s infinite ease-in-out;
+  }
+}
+
+.songs-list {
+  display: flex;
+  list-style-type: none;
+  flex-wrap: wrap;
+  margin: 50px 0;
+  padding: 0;
+
+  &__item {
+    width: 100%;
+
+    @media (min-width: 576px) {
+      width: 50%;
+    }
+
+    @media (min-width: 960px) {
+      width: 33.33%;
+    }
+  }
+}
+
+.placeholder-text{
+  font-size: 2rem;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+
+// Animations
+@keyframes gray-bounce {
+  @include bounce-animation($color-gray-darkest);
+}
+
+@keyframes transparency {
+  0% {
+    opacity: 0.7;
+  }
+
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

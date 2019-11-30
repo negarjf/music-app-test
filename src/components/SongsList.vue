@@ -27,34 +27,3 @@
         },
     };
 </script>
-
-<style lang="scss" scoped>
-
-    .songs-list {
-        display: flex;
-        list-style-type: none;
-        flex-wrap: wrap;
-        margin: 50px 0;
-        padding: 0;
-
-        &__item {
-            width: 100%;
-
-            @media (min-width: 576px) {
-                width: 50%;
-            }
-
-            @media (min-width: 960px) {
-                width: 33.33%;
-            }
-        }
-    }
-
-    .placeholder-text{
-        font-size: 2rem;
-        padding: 20px;
-        text-align: center;
-        margin-top: 50px;
-    }
-
-</style>
