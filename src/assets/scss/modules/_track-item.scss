@@ -114,8 +114,7 @@
     }
   }
 
-
-  @mixin hover-effect {
+  &:hover {
     &:before {
       left: -1rem;
       right: -1rem;
@@ -129,18 +128,6 @@
         visibility: visible;
         transform: translateY(0);
       }
-    }
-  }
-
-  @media (hover: hover) {
-    &:hover {
-      @include hover-effect;
-    }
-  }
-
-  @media (hover: none) {
-    &.expand {
-      @include hover-effect;
     }
   }
 }

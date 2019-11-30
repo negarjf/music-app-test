@@ -20,7 +20,9 @@
                     {{ info && info.artist_name || '...' }}
                 </p>
             </div>
-            <div class="track-item__menu" v-if="!player">
+            <div v-if="!player"
+                 class="track-item__menu"
+            >
                 <i class="fa fa-ellipsis-v"></i>
             </div>
         </header>
