@@ -13,9 +13,7 @@
 <script>
     // Components
     import TrackItem from '@/components/TrackItem';
-
-    // Services
-    import MusicServices from '@/services/MusicServices';
+    import {mapGetters} from 'vuex';
 
     export default {
         name: 'SongsList',
@@ -24,19 +22,9 @@
             TrackItem
         },
 
-        data() {
-            return {
-                tracks: [],
-            };
+        computed: {
+            ...mapGetters(['tracks']),
         },
-
-        created() {
-            MusicServices.getList().then((response) => {
-                this.tracks = response.data;
-            }).catch(error => {
-                console.log(error);
-            })
-        }
     };
 </script>
 
@@ -46,7 +34,7 @@
         display: flex;
         list-style-type: none;
         flex-wrap: wrap;
-        margin: 0;
+        margin: 50px 0;
         padding: 0;
 
         &__item {
