@@ -1,5 +1,6 @@
 import Http from '@/Http';
-const API_KEY = '___agAFTxkmMIWsmN9zOpM_6l2SkZPPy21LGRlxhYD8';
+import { getFormData } from '@/scripts/helpers';
+const API_KEY = process.env.VUE_APP_API_KEY;
 
 export default {
     /**
@@ -16,7 +17,7 @@ export default {
      * @returns {*}
      */
     like(params) {
-        return Http.post('/interact/like', params, { params : {apikey: API_KEY}});
+        return Http.post('/interact/like', getFormData(params), { params : {apikey: API_KEY} });
     },
     
     /**
@@ -25,7 +26,7 @@ export default {
      * @returns {*}
      */
     comment(params) {
-        return Http.post('/interact/like', params, { params : {apikey: API_KEY}});
+        return Http.post('/interact/like', getFormData(params), { params : {apikey: API_KEY}});
     },
     
 }
