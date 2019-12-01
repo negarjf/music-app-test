@@ -1,0 +1,21 @@
+/*-----------------------------------------------------------------
+- Button
+-----------------------------------------------------------------*/
+
+.button {
+  border: none;
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  outline: none;
+
+  &.primary {
+    background-color: $color-primary;
+  }
+
+  @each $name, $value in $colors {
+    &.#{$name}{
+      background-color: $value;
+    };
+  }
+}

@@ -38,8 +38,11 @@
                          :index="index"
             />
             <comment-button class="track-item__badge"
-                         role="button"
-                         :count="info && info.comments | showNum"
+                            role="button"
+                            :id="info && info.id"
+                            :name="info && info.name || ''"
+                            :count="info && info.comments | showNum"
+                            :index="index"
             />
             <visits-button class="track-item__badge"
                            role="button"

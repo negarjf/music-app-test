@@ -70,7 +70,12 @@ export default new Vuex.Store({
     
         addPlayCount(state, index) {
             Vue.set(state.tracks[index], 'plays', state.tracks[index].plays + 1);
-        }
+        },
+        
+        addCommentCount(state, index) {
+            console.log(index);
+            Vue.set(state.tracks[index], 'comments', state.tracks[index].comments + 1);
+        },
     },
   
     actions: {
@@ -82,6 +87,10 @@ export default new Vuex.Store({
     
         increasePlays({commit}, {index}) {
             commit('addPlayCount', index);
+        },
+        
+        increaseComments({commit}, {index}) {
+            commit('addCommentCount', index);
         },
         
         likeTrack({commit}, {index, id}) {

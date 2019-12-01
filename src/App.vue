@@ -4,6 +4,7 @@
           <header-section />
           <songs-container/>
           <music-player />
+          <comment-box />
       </div>
   </div>
 </template>
@@ -12,6 +13,7 @@
   import HeaderSection from '@/components/Header';
   import SongsContainer from '@/components/SongsContainer';
   import MusicPlayer from '@/components/Player';
+  import CommentBox from '@/components/CommentBox';
 
 export default {
     name: 'app',
@@ -19,7 +21,8 @@ export default {
     components: {
         HeaderSection,
         SongsContainer,
-        MusicPlayer
+        MusicPlayer,
+        CommentBox
     },
 
     data() {
