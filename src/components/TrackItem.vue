@@ -42,8 +42,9 @@
                          :count="info && info.comments | showNum"
             />
             <visits-button class="track-item__badge"
-                         role="button"
-                         :count="info && info.plays | showNum"
+                           role="button"
+                           :count="info && info.plays | showNum"
+                           :index="index"
             />
         </footer>
     </div>
@@ -104,6 +105,7 @@
             toggleAudio() {
                 if (!this.currentTrack || (this.currentTrack.id !== this.info.id)) {
                     this.$store.dispatch('initAudio', {track: this.info, index: this.index});
+                    this.$store.dispatch('increasePlays', {index: this.index});
                 }
 
                 if(this.playing) {

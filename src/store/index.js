@@ -66,6 +66,10 @@ export default new Vuex.Store({
         setUnlike(state, index) {
             Vue.set(state.tracks[index], 'isLiked', false);
             Vue.set(state.tracks[index], 'likes', state.tracks[index].likes - 1);
+        },
+    
+        addPlayCount(state, index) {
+            Vue.set(state.tracks[index], 'plays', state.tracks[index].plays + 1);
         }
     },
   
@@ -74,6 +78,10 @@ export default new Vuex.Store({
             return MusicServices.getList().then((response) => {
                 commit('setTracks', response.data);
             });
+        },
+    
+        increasePlays({commit}, {index}) {
+            commit('addPlayCount', index);
         },
         
         likeTrack({commit}, {index, id}) {

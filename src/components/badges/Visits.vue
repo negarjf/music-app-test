@@ -1,6 +1,6 @@
 <template>
     <badge icon="headphones-alt">
-
+        {{ label }}
     </badge>
 </template>
 
