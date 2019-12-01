@@ -30,31 +30,42 @@
         <slot/>
 
         <footer class="track-item__footer">
-            <span class="track-item__badge" role="button">
-                <i class="fa fa-heart" />
-                {{ info && info.likes | showNum}}
-            </span>
-            <span class="track-item__badge" role="button">
-                <i class="fa fa-comment-alt" />
-                {{ info && info.comments | showNum}}
-            </span>
-            <span class="track-item__badge" role="button">
-                <i class="fa fa-headphones-alt" />
-                {{ info && info.plays | showNum}}
-            </span>
+            <like-button class="track-item__badge"
+                         role="button"
+                         :count="info && info.likes | showNum"
+                         :id="info && info.id"
+                         @click="test"
+
+            />
+            <comment-button class="track-item__badge"
+                         role="button"
+                         :count="info && info.comments | showNum"
+            />
+            <visits-button class="track-item__badge"
+                         role="button"
+                         :count="info && info.plays | showNum"
+            />
         </footer>
     </div>
 </template>
 
 <script>
+    // Components
     import PlayerButton from '@/components/PlayerButton';
+    import LikeButton from '@/components/badges/Like';
+    import CommentButton from '@/components/badges/Comment';
+    import VisitsButton from '@/components/badges/Visits';
+    // Vuex
     import { mapGetters } from 'vuex';
 
     export default {
         name: 'TrackItem',
 
         components: {
-            PlayerButton
+            PlayerButton,
+            LikeButton,
+            CommentButton,
+            VisitsButton
         },
 
         props: {
@@ -97,6 +108,10 @@
                 } else {
                     this.$store.dispatch('play');
                 }
+            },
+
+            test(){
+                console.log('ffffff');
             }
         }
     };
