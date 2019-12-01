@@ -12,6 +12,52 @@ body {
   margin: 0 auto;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-gray-darker;
+  height: 80px;
+  padding: 10px 20px;
+  z-index: 100;
+  box-shadow: 0 0 9px rgba(#000, 0.6);
+
+  &__inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin: 0 auto;
+    max-width: 1200px;
+    .logo {
+      width: 50px;
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    .title {
+      display: flex;
+      flex-grow: 1;
+      margin: 0 0 0 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+      font-size: 1.8rem;
+      strong {
+        padding-left: 10px;
+        font-weight: 700;
+      }
+
+      @include bp {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
 .main-header {
   display: flex;
   align-items: center;
