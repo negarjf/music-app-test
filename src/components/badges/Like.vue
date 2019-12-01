@@ -23,14 +23,11 @@
 
         methods: {
             like () {
-                debugger;
-                console.log('djdjd');
                 if(this.isLiked) {
                     return;
                 }
 
-                this.$store.dispatch('likeTrack', this.id).then(response => {
-                    console.log(response);
+                this.$store.dispatch('likeTrack', this.id).then(() => {
                     this.isLiked = true;
                 }).catch(error => {
                     console.log(error);

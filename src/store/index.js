@@ -52,6 +52,17 @@ export default new Vuex.Store({
                 commit('setTracks', response.data);
             });
         },
+        
+        likeTrack(context, id) {
+            return MusicServices.like({id});
+        },
+        
+        commentTrack(context, payload) {
+            return MusicServices.comment({
+                id: payload.id,
+                type: payload.type
+            });
+        },
   
         initAudio ({commit, dispatch}, track) {
           dispatch('pause');

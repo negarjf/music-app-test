@@ -34,8 +34,6 @@
                          role="button"
                          :count="info && info.likes | showNum"
                          :id="info && info.id"
-                         @click="test"
-
             />
             <comment-button class="track-item__badge"
                          role="button"
@@ -109,10 +107,6 @@
                     this.$store.dispatch('play');
                 }
             },
-
-            test(){
-                console.log('ffffff');
-            }
         }
     };
 </script>

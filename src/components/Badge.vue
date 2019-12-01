@@ -1,5 +1,5 @@
 <template>
-    <span class="badge">
+    <span class="badge" @click="$emit('click')">
         <i class="fa"
            :class="'fa-' + icon"
            v-if="icon"
