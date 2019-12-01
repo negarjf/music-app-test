@@ -44,14 +44,17 @@
                 }
 
                 this.audio.addEventListener('play', () => {
+                    if(!this.audio) return;
                     this.percent = 0;
                 });
 
                 this.audio.addEventListener('timeupdate', () => {
+                    if(!this.audio) return;
                     this.percent = (this.audio.currentTime / this.audio.duration);
                 });
 
                 this.audio.addEventListener('ended', () => {
+                    if(!this.audio) return;
                     this.$store.commit('setPlayingStatus', false);
                 })
             },

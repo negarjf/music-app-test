@@ -7,8 +7,9 @@ export default {
      * Get a list of trending tracks
      * @returns {*}
      */
-    getList () {
-        return Http.get('/song/trending');
+    getList (params) {
+        let {page} = params;
+        return Http.get('/song/trending/' + page);
     },
     
     /**

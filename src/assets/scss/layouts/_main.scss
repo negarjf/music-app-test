@@ -12,6 +12,12 @@ body {
   margin: 0 auto;
 }
 
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .loading{
   position: relative;
   background: red;

@@ -8,14 +8,25 @@
   font-size: 1.1rem;
   border-radius: 5px;
   outline: none;
+  cursor: pointer;
 
   &.primary {
     background-color: $color-primary;
+
+    &:disabled {
+      background-color: mix($color-primary, $color-gray-lightest);
+      color: mix(#000000, #fff, 60)
+    }
   }
 
   @each $name, $value in $colors {
     &.#{$name}{
       background-color: $value;
+
+      &:disabled {
+        background-color: mix($value, $color-gray-lightest);
+        color: mix(#000000, #fff, 60)
+      }
     };
   }
 }

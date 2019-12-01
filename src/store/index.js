@@ -26,7 +26,6 @@ export default new Vuex.Store({
         },
         
         currentTrackIndex(state){
-            console.log(state.currentTrackIndex);
             return state.currentTrackIndex;
         },
         
@@ -55,7 +54,11 @@ export default new Vuex.Store({
         },
       
         setAudio(state, track) {
-          state.audio = new Audio(track.music_file_path);
+            if(track) {
+                state.audio = new Audio(track.music_file_path);
+            }else {
+                state.audio = null;
+            }
         },
         
         setLike(state, index) {
@@ -79,8 +82,8 @@ export default new Vuex.Store({
     },
   
     actions: {
-        getTracks({commit}) {
-            return MusicServices.getList().then((response) => {
+        getTracks({commit}, page = 1) {
+            return MusicServices.getList({page}).then((response) => {
                 commit('setTracks', response.data);
             });
         },
@@ -114,6 +117,13 @@ export default new Vuex.Store({
               commit('setCurrentTrack', track);
               commit('setCurrentTrackIndex', index);
               commit('setAudio', track);
+        },
+    
+        clearAudio ({commit, dispatch}) {
+            dispatch('pause');
+            commit('setCurrentTrack', null);
+            commit('setCurrentTrackIndex', null);
+            commit('setAudio', null);
         },
       
         play ({commit, state}) {
