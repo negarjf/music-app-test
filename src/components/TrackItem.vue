@@ -34,6 +34,8 @@
                          role="button"
                          :count="info && info.likes | showNum"
                          :id="info && info.id"
+                         :isLiked="info && info.isLiked"
+                         :index="index"
             />
             <comment-button class="track-item__badge"
                          role="button"
@@ -77,7 +79,10 @@
                 default: false
             },
 
-
+            index: {
+                type: Number,
+                default: null
+            },
         },
 
         filters: {
@@ -98,7 +103,7 @@
         methods: {
             toggleAudio() {
                 if (!this.currentTrack || (this.currentTrack.id !== this.info.id)) {
-                    this.$store.dispatch('initAudio', this.info);
+                    this.$store.dispatch('initAudio', {track: this.info, index: this.index});
                 }
 
                 if(this.playing) {

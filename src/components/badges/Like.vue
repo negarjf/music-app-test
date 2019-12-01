@@ -1,6 +1,6 @@
 <template>
     <badge icon="heart"
-           @click="like"
+           @click="toggleLike"
            :class="{'liked': isLiked}"
     >
         {{ label }}
@@ -15,23 +15,21 @@
 
         mixins: [BadgeMixin],
 
-        data() {
-            return {
-                isLiked: false,
-            };
+        props: {
+            isLiked: {
+                type: Boolean,
+                default: false
+            }
         },
 
         methods: {
-            like () {
+            toggleLike () {
                 if(this.isLiked) {
-                    return;
-                }
+                    this.$store.dispatch('unLikeTrack', {index: this.index});
+                } else {
+                    this.$store.dispatch('likeTrack', {index: this.index, id: this.id});
 
-                this.$store.dispatch('likeTrack', this.id).then(() => {
-                    this.isLiked = true;
-                }).catch(error => {
-                    console.log(error);
-                });
+                }
             }
         }
     };

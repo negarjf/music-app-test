@@ -16,6 +16,11 @@ export default {
         id: {
             type: String,
             default: null
+        },
+        
+        index: {
+            type: Number,
+            default: null
         }
     },
     

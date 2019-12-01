@@ -1,7 +1,7 @@
 <template>
     <ul class="songs-list" v-if="tracks && tracks.length">
-        <li class="songs-list__item" v-for="track in tracks" :key="track.id">
-            <track-item :info="track"/>
+        <li class="songs-list__item" v-for="(track, index) in tracks" :key="track.id">
+            <track-item :info="track" :index="index"/>
         </li>
     </ul>
 

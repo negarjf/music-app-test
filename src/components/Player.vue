@@ -9,6 +9,7 @@
                 ></div>
             </div>
             <track-item :info="currentTrack"
+                        :index="currentTrackIndex"
                         player
             />
         </div>
@@ -33,7 +34,7 @@
         },
 
         computed: {
-            ...mapGetters(['currentTrack', 'audio'])
+            ...mapGetters(['currentTrack', 'audio', 'currentTrackIndex'])
         },
 
         watch: {
