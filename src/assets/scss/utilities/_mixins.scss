@@ -6,26 +6,26 @@
 // Media query
 @mixin bp($class: xs) {
   @if $class == xs {
-    @media (max-width: (map_get($bp-sizes, 'sm')-1) + 'px') { @content; }
-  }
-
-  @else if $class == sm {
-    @media (min-width: map_get($bp-sizes, 'sm') + 'px') { @content; }
-  }
-
-  @else if $class == md {
-    @media (min-width: map_get($bp-sizes, 'md') + 'px') { @content; }
-  }
-
-  @else if $class == lg {
-    @media (min-width: map_get($bp-sizes, 'lg') + 'px') { @content; }
-  }
-
-  @else if $class == xl {
-    @media (min-width: map_get($bp-sizes, 'xl') + 'px') { @content; }
-  }
-
-  @else {
+    @media (max-width: (map_get($bp-sizes, 'sm')-1) + 'px') {
+      @content;
+    }
+  } @else if $class == sm {
+    @media (min-width: map_get($bp-sizes, 'sm') + 'px') {
+      @content;
+    }
+  } @else if $class == md {
+    @media (min-width: map_get($bp-sizes, 'md') + 'px') {
+      @content;
+    }
+  } @else if $class == lg {
+    @media (min-width: map_get($bp-sizes, 'lg') + 'px') {
+      @content;
+    }
+  } @else if $class == xl {
+    @media (min-width: map_get($bp-sizes, 'xl') + 'px') {
+      @content;
+    }
+  } @else {
     @warn "Breakpoint mixin supports: xs, sm, md, lg";
   }
 }

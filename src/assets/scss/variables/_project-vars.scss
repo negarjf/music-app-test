@@ -3,16 +3,16 @@
 -----------------------------------------------------------------*/
 
 // Direction
-$direction:          		ltr !default;
+$direction: ltr !default;
 
 // Fonts
-$font-family:				'Lato', sans-serif !default;
-$font-family-heading:		'Lato', sans-serif !default;
-$font-size:          		16px !default;
-$font-weight:        		400 !default;
-$line-height:        		1.5 !default;
-$font-base-color:           $color-gray-lighter;
-$border-radius:             10px;
+$font-family: 'Lato', sans-serif !default;
+$font-family-heading: 'Lato', sans-serif !default;
+$font-size: 16px !default;
+$font-weight: 400 !default;
+$line-height: 1.5 !default;
+$font-base-color: $color-gray-lighter;
+$border-radius: 10px;
 
 // Breakpoints
 $bp-sizes: (

@@ -8,7 +8,7 @@
   box-shadow: 0 3px 15px rgba($color-gray-light, 0.2);
 
   @each $name, $value in $colors {
-    &.#{$name}{
+    &.#{$name} {
       box-shadow: 0 3px 15px rgba($color-gray-light, 0.1), 0 3px 15px rgba($value, 0.1);
     }
   }

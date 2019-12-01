@@ -20,13 +20,14 @@
   }
 
   @each $name, $value in $colors {
-    &.#{$name}{
+    &.#{$name} {
       background-color: $value;
 
       &:disabled {
         background-color: mix($value, $color-gray-lightest);
         color: mix(#000000, #fff, 60)
       }
-    };
+    }
+  ;
   }
 }

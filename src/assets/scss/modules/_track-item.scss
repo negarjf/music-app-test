@@ -2,7 +2,7 @@
 - Track Item
 -----------------------------------------------------------------*/
 
-.track-item{
+.track-item {
   margin: 10px 20px 80px 20px;
   position: relative;
   z-index: 1;
@@ -39,7 +39,6 @@
     left: 1.2rem;
     top: 1rem;
     transition: all 0.3s ease;
-    //box-shadow: 0 3px 15px rgba($color-gray-light, 0.2);
     z-index: -1;
 
   }
@@ -58,6 +57,7 @@
   &__title {
     flex-grow: 1;
     margin-left: 10px;
+
     .title {
       font-size: 1rem;
       overflow: hidden;
@@ -75,7 +75,7 @@
     }
   }
 
-  &__menu{
+  &__menu {
     color: $color-gray-lighter;
     cursor: pointer;
   }
@@ -117,7 +117,7 @@
     }
 
     .track-item__footer {
-      .track-item__badge{
+      .track-item__badge {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);

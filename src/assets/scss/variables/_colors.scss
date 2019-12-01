@@ -3,45 +3,45 @@
 -----------------------------------------------------------------*/
 
 // Colors
-$color-red:                 #F13A30      !default;
-$color-orange:              #F18F1C      !default;
-$color-yellow:              #f1c40f      !default;
-$color-green:               #1ec847      !default;
-$color-teal:                #009c74      !default;
-$color-blue:                #1875F0      !default;
-$color-purple:              #5553CE      !default;
-$color-brown:               #9F5232      !default;
-$color-gray:                #607D8B 	 !default;
-$color-white:               #ffffff 	 !default;
+$color-red: #F13A30 !default;
+$color-orange: #F18F1C !default;
+$color-yellow: #f1c40f !default;
+$color-green: #1ec847 !default;
+$color-teal: #009c74 !default;
+$color-blue: #1875F0 !default;
+$color-purple: #5553CE !default;
+$color-brown: #9F5232 !default;
+$color-gray: #607D8B !default;
+$color-white: #ffffff !default;
 
-$color-primary:				$color-yellow;
-$color-secondary:			$color-gray;
+$color-primary: $color-yellow;
+$color-secondary: $color-gray;
 
 // Backgrounds
 //------------------------------------------------
-$bg-primary:			    #021119;
-$bg-secondary:				#f9fbfd;
+$bg-primary: #021119;
+$bg-secondary: #f9fbfd;
 
 
 // Tones
-$color-gray-lightest: 		#ECEFF1;
-$color-gray-lighter: 		#CFD8DC;
-$color-gray-light: 			#90A4AE;
-$color-gray-dark: 			#546E7A;
-$color-gray-darker: 		#313c42;
-$color-gray-darkest: 		#263238;
+$color-gray-lightest: #ECEFF1;
+$color-gray-lighter: #CFD8DC;
+$color-gray-light: #90A4AE;
+$color-gray-dark: #546E7A;
+$color-gray-darker: #313c42;
+$color-gray-darkest: #263238;
 
 $colors: (
-        red:		$color-red,
-        orange:  	$color-orange,
-        yellow: 	$color-yellow,
-        green:		$color-green,
-        teal:		$color-teal,
-        blue:		$color-blue,
-        purple: 	$color-purple,
-        brown:	    $color-brown,
-        gray:		$color-gray,
-        white:		$color-white,
+        red: $color-red,
+        orange: $color-orange,
+        yellow: $color-yellow,
+        green: $color-green,
+        teal: $color-teal,
+        blue: $color-blue,
+        purple: $color-purple,
+        brown: $color-brown,
+        gray: $color-gray,
+        white: $color-white,
 ) !default;
 
 
