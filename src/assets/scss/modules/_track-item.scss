@@ -10,7 +10,7 @@
   &__thumb {
     width: 100%;
     position: relative;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     overflow: hidden;
 
     &:after {
@@ -32,7 +32,7 @@
   &:before {
     content: '';
     background: $color-gray-darkest;
-    border-radius: var(--border-radius);
+    border-radius: $border-radius;
     position: absolute;
     right: -1rem;
     bottom: -1rem;

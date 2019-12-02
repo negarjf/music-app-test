@@ -40,9 +40,3 @@
         },
     };
 </script>
-
-<style scoped>
-    .liked {
-        color: var(--color-red)
-    }
-</style>

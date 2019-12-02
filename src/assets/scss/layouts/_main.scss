@@ -27,7 +27,7 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: flex-start;
     margin: 0 auto;
     max-width: 1200px;
 
@@ -70,7 +70,6 @@ body {
 
 .loading {
   position: relative;
-  background: red;
 
   &:before {
     content: '';
@@ -80,7 +79,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: var(--color-yellow);
+    background-color: $color-primary;
     z-index: 1000;
   }
 
@@ -126,6 +125,10 @@ body {
   padding: 20px;
   text-align: center;
   margin-top: 50px;
+}
+
+.liked {
+  color: $color-red;
 }
 
 
