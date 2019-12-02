@@ -1,5 +1,6 @@
 import Http from '@/Http';
 import { getFormData } from '@/scripts/helpers';
+
 const API_KEY = process.env.VUE_APP_API_KEY;
 
 export default {
@@ -7,8 +8,8 @@ export default {
      * Get a list of trending tracks
      * @returns {*}
      */
-    getList (params) {
-        let {page} = params;
+    getList(params) {
+        let { page } = params;
         return Http.get('/song/trending/' + page);
     },
     
@@ -18,7 +19,7 @@ export default {
      * @returns {*}
      */
     like(params) {
-        return Http.post('/interact/like', getFormData(params), { params : {apikey: API_KEY} });
+        return Http.post('/interact/like', getFormData(params), { params: { apikey: API_KEY } });
     },
     
     /**
@@ -27,7 +28,7 @@ export default {
      * @returns {*}
      */
     comment(params) {
-        return Http.post('/interact/like', getFormData(params), { params : {apikey: API_KEY}});
+        return Http.post('/interact/like', getFormData(params), { params: { apikey: API_KEY } });
     },
     
-}
+};
