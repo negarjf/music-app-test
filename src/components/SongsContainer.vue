@@ -4,7 +4,7 @@
             <h1>
                 Trending
             </h1>
-            <pagination @change="changePage" :current="currentPage"/>
+            <pagination @change="changePage" :current="currentPage" />
         </header>
 
         <songs-list />
@@ -30,12 +30,16 @@
         },
 
         methods: {
+            /**
+             * Fetch new page data and reset the player
+             * @param page
+             */
             changePage(page) {
                 this.$store.dispatch('getTracks', page).then(() => {
                     this.$store.dispatch('clearAudio');
                     this.currentPage = page;
                 });
-            }
-        }
+            },
+        },
     };
 </script>

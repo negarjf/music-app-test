@@ -43,15 +43,17 @@
         data() {
             return {
                 comment: '',
-                title: '',
-                id: '',
-                index: '',
+                title  : '',
+                id     : '',
+                index  : '',
             };
         },
 
         created() {
+
+            // Open modal if event is raised
             EventBus.$on('openCommentModal', (e) => {
-                const {id, title, index} = e;
+                const { id, title, index } = e;
                 this.title = title;
                 this.id = id;
                 this.index = index;
@@ -62,28 +64,43 @@
         computed: {
             label() {
                 return `What do you think about "${this.title}"?`;
-            }
+            },
         },
 
         methods: {
-            openComment () {
+            /**
+             * Open Mmdal
+             */
+            openComment() {
                 this.$refs.comment.open();
             },
 
-            closeComment () {
+            /**
+             * Close modal
+             */
+            closeComment() {
                 this.$refs.comment.close();
             },
 
-            clearComment () {
+            /**
+             * Clear comment field
+             */
+            clearComment() {
                 this.comment = '';
             },
 
+            /**
+             * Submit comment
+             */
             postComment() {
-                this.$store.dispatch('commentTrack', {id: this.id, type: this.comment}).then(() => {
-                    this.$store.dispatch('increaseComments', {index: this.index});
+                this.$store.dispatch('commentTrack', {
+                    id  : this.id,
+                    type: this.comment,
+                }).then(() => {
+                    this.$store.dispatch('increaseComments', { index: this.index });
                     this.closeComment();
                 });
-            }
-        }
+            },
+        },
     };
 </script>

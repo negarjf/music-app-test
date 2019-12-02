@@ -16,15 +16,15 @@
 
         props: {
             icon: {
-                type: String,
-                default: null
+                type   : String,
+                default: null,
             },
 
             label: {
-                type: String,
-                default: null
-            }
-        }
+                type   : String,
+                default: null,
+            },
+        },
     };
 </script>
 

@@ -8,16 +8,19 @@ export default {
     },
     
     props: {
+        // Badge label count
         count: {
             type: [String, Number],
             default: '-'
         },
         
+        // Track Id
         id: {
             type: String,
             default: null
         },
         
+        // Track Index
         index: {
             type: Number,
             default: null
@@ -25,6 +28,10 @@ export default {
     },
     
     computed: {
+        /**
+         * Badge Label
+         * @returns {*}
+         */
         label() {
             return this.count;
         }

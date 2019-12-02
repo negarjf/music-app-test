@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import BadgeMixin from '@/components/badges/BadgeMixin'
+    import BadgeMixin from '@/components/badges/BadgeMixin';
 
     export default {
         name: 'Visits',

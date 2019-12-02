@@ -10,7 +10,7 @@
                 </header>
 
                 <div class="modal__body">
-                    <slot/>
+                    <slot />
                 </div>
             </div>
         </div>
@@ -22,10 +22,11 @@
         name: 'Modal',
 
         props: {
+            // Modal title
             title: {
-                type: String,
-                default: null
-            }
+                type   : String,
+                default: null,
+            },
         },
 
         data() {
@@ -35,28 +36,37 @@
         },
 
         methods: {
+            /**
+             * Close modal and raise event
+             */
             close() {
                 this.$emit('close');
                 this.show = false;
             },
 
+            /**
+             * Open modal and raise event
+             */
             open() {
                 this.$emit('open');
                 this.show = true;
-            }
-        }
+            },
+        },
     };
 </script>
 
 <style lang="scss" scoped>
     .fade-enter-active, .fade-leave-active {
         transition: opacity 0.3s;
+
         .modal {
             transition: transform 0.5s;
         }
     }
+
     .fade-enter, .fade-leave-to {
         opacity: 0;
+
         .modal {
             transform: translateY(-10%);
         }

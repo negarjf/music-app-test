@@ -27,7 +27,7 @@
             </div>
         </header>
 
-        <slot/>
+        <slot />
 
         <footer class="track-item__footer">
             <like-button class="track-item__badge"
@@ -69,23 +69,26 @@
             PlayerButton,
             LikeButton,
             CommentButton,
-            VisitsButton
+            VisitsButton,
         },
 
         props: {
+            // Track info
             info: {
-                type: Object,
+                type   : Object,
                 default: null,
             },
 
+            // Player mode (The fixed player in the bottom)
             player: {
-                type: Boolean,
-                default: false
+                type   : Boolean,
+                default: false,
             },
 
+            // Track index
             index: {
-                type: Number,
-                default: null
+                type   : Number,
+                default: null,
             },
         },
 
@@ -97,7 +100,7 @@
              */
             showNum(val) {
                 return isNaN(val) ? '-' : val;
-            }
+            },
         },
 
         computed: {
@@ -105,18 +108,24 @@
         },
 
         methods: {
+            /**
+             * Initiate audio and toggle play/pause
+             */
             toggleAudio() {
                 if (!this.currentTrack || (this.currentTrack.id !== this.info.id)) {
-                    this.$store.dispatch('initAudio', {track: this.info, index: this.index});
-                    this.$store.dispatch('increasePlays', {index: this.index});
+                    this.$store.dispatch('initAudio', {
+                        track: this.info,
+                        index: this.index,
+                    });
+                    this.$store.dispatch('increasePlays', { index: this.index });
                 }
 
-                if(this.playing) {
+                if (this.playing) {
                     this.$store.dispatch('pause');
                 } else {
                     this.$store.dispatch('play');
                 }
             },
-        }
+        },
     };
 </script>

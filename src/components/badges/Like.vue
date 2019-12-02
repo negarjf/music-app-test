@@ -8,7 +8,7 @@
 </template>
 
 <script>
-    import BadgeMixin from '@/components/badges/BadgeMixin'
+    import BadgeMixin from '@/components/badges/BadgeMixin';
 
     export default {
         name: 'Like',
@@ -18,20 +18,26 @@
         props: {
             isLiked: {
                 type: Boolean,
-                default: false
-            }
+                default: false,
+            },
         },
 
         methods: {
-            toggleLike () {
-                if(this.isLiked) {
-                    this.$store.dispatch('unLikeTrack', {index: this.index});
+            /**
+             * Like and Unlike action
+             */
+            toggleLike() {
+                if (this.isLiked) {
+                    this.$store.dispatch('unLikeTrack', { index: this.index });
                 } else {
-                    this.$store.dispatch('likeTrack', {index: this.index, id: this.id});
+                    this.$store.dispatch('likeTrack', {
+                        index: this.index,
+                        id   : this.id,
+                    });
 
                 }
-            }
-        }
+            },
+        },
     };
 </script>
 

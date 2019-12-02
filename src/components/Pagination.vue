@@ -14,21 +14,29 @@
         name: 'Pagination',
 
         props: {
+            // Current page number
             current: {
-                type: Number,
-                default: 1
-            }
+                type   : Number,
+                default: 1,
+            },
         },
 
         methods: {
+            /**
+             * Go to previous page
+             */
             prev() {
+                // Had to hard-code since API doesn't provide total page number
                 this.$emit('change', 1);
             },
 
+            /**
+             * Go to next page
+             */
             next() {
                 this.$emit('change', 2);
             },
-        }
+        },
     };
 </script>
 
